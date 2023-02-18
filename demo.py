@@ -7,7 +7,7 @@ from easy_input import *
 # 输出
 cprint("这是一段字符串")
 cprint("这是一段警告字符串", mode="warning")
-cprint("这是一段危险字符串", mode="error")
+cprint("这是一段错误字符串", mode="error")
 cprint("这是一段不带时间的字符串", show_time=False)
 cprint("这是一段不带时间，调整颜色的字符串", mode="cyan", show_time=False)
 print("---------")
