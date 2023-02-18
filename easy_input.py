@@ -17,7 +17,7 @@ def mode_to_color(mode="info"):
 
 
 # 带时间打印
-def cprint(val, mode="info", show_time=True):
+def ezprint(val, mode="info", show_time=True):
     if show_time:
         print(add_data_time_head(str(val), mode))
     else:
@@ -32,7 +32,7 @@ def cprint(val, mode="info", show_time=True):
 #   mode 输出颜色 ["info","warning","error", "red", "green", "yellow", "blue", "magenta", "cyan", "white"]
 #   show_time 展示时间
 #   show_val 展示输入值
-def cinput(
+def ezinput(
     org_key,
     type="str",
     default="",
@@ -59,8 +59,8 @@ def cinput(
                 str_val = default
                 val = default
             elif not_empty_flag:
-                cprint("该值不能为空", "error")
-                return cinput(org_key, type, default, not_empty_flag, mode)
+                ezprint("该值不能为空", "error")
+                return ezinput(org_key, type, default, not_empty_flag, mode)
             else:
                 str_val = default
                 val = default
@@ -71,10 +71,10 @@ def cinput(
         else:
             val = str_val
     except Exception:
-        return cinput(org_key, type, default, not_empty_flag, mode)
+        return ezinput(org_key, type, default, not_empty_flag, mode)
 
     if show_val:
-        cprint("\t" + str(str_val), mode, show_time)
+        ezprint("\t" + str(str_val), mode, show_time)
     return val
 
 
