@@ -182,8 +182,6 @@ def color_single_str(string, color):
 #       color
 #           list
 #               lsit[list]
-
-
 def ezprint(msg, color="info", show_time=True, def_color=False, end=None):
     if isinstance(msg, str):
         msg = [msg]
@@ -193,7 +191,8 @@ def ezprint(msg, color="info", show_time=True, def_color=False, end=None):
     if show_time:
         msg = [get_date_str() + "\t"] + msg
 
-    print(color_str(msg, color, def_color))
+    print(color_str(msg, color, def_color), end=end)
+
 
 
 # 获取格式化时间
